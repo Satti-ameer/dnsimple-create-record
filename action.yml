@@ -1,0 +1,41 @@
+name: "DNSimple Create DNS Record"
+description: "Creates a new DNSimple DNS record"
+author: "Nick Linnell"
+
+inputs:
+  token:
+    description: "DNSimple access token"
+    required: true
+  account:
+    description: "Your DNSimple account number"
+    required: true
+  zone:
+    description: "The zone name, e.g. example.com"
+    required: true
+  name:
+    description: "The record name, without the domain. The domain will be automatically appended. Use an empty string to create a record for the apex."
+    required: true
+  type:
+    description: "The type of DNS record to create, e.g. A, CNAME etc."
+    required: true
+  content:
+    description: "The content of the DNS record e.g. IP address or domain name"
+    required: true
+  ttl:
+    description: "Time to live for DNS record"
+  priority:
+    description: "The priority level of the DNS record"
+  regions:
+    description: "Optional set of regions"
+
+outputs:
+  id:
+    description: "The id of the created DNS record"
+
+runs:
+  using: "node12"
+  main: "main.js"
+
+branding:
+  icon: "globe"
+  color: "green"

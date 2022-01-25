@@ -9,3 +9,7 @@ COPY . /usr/src/app
 
 RUN chmod 755 entrypoint.sh
 CMD sh entrypoint.sh
+- الاسم: Cloudflare DNS
+
+  الاستخدامات: xorilog/cloudflare-dns-action@1.0.0
+
